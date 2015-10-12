@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TryDrawChart2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFQ-b9-tWB">
+                                <rect key="frame" x="0.0" y="500" width="600" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8To-qf-3Nw">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                        <state key="normal" title="change label position">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeLabelPosition" destination="BYZ-38-t0r" eventType="touchUpInside" id="U9c-gg-v4A"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="8To-qf-3Nw" secondAttribute="trailing" id="60q-ri-Qlx"/>
+                                    <constraint firstAttribute="height" constant="100" id="Idf-82-4SN"/>
+                                    <constraint firstItem="8To-qf-3Nw" firstAttribute="centerY" secondItem="BFQ-b9-tWB" secondAttribute="centerY" id="IeV-lK-3Fi"/>
+                                    <constraint firstItem="8To-qf-3Nw" firstAttribute="centerX" secondItem="BFQ-b9-tWB" secondAttribute="centerX" id="Qb7-f3-HDP"/>
+                                    <constraint firstItem="8To-qf-3Nw" firstAttribute="top" secondItem="BFQ-b9-tWB" secondAttribute="top" id="Rzk-mf-Fco"/>
+                                    <constraint firstItem="8To-qf-3Nw" firstAttribute="leading" secondItem="BFQ-b9-tWB" secondAttribute="leading" id="pNI-2E-1RN"/>
+                                    <constraint firstAttribute="bottom" secondItem="8To-qf-3Nw" secondAttribute="bottom" id="uiB-6Z-juC"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="IeV-lK-3Fi"/>
+                                        <exclude reference="Qb7-f3-HDP"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="47f-4v-AaI">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
+                                <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="47f-4v-AaI" secondAttribute="trailing" id="Wvb-zU-6ET"/>
+                            <constraint firstItem="BFQ-b9-tWB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Zrp-Pe-hoz"/>
+                            <constraint firstAttribute="trailing" secondItem="BFQ-b9-tWB" secondAttribute="trailing" id="dGV-uh-eqk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BFQ-b9-tWB" secondAttribute="bottom" id="dcL-DN-fT1"/>
+                            <constraint firstItem="BFQ-b9-tWB" firstAttribute="top" secondItem="47f-4v-AaI" secondAttribute="bottom" id="g9L-Mc-TQ6"/>
+                            <constraint firstItem="47f-4v-AaI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="grp-de-Zbu"/>
+                            <constraint firstItem="47f-4v-AaI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jM8-kj-0mF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="47f-4v-AaI" id="ntg-be-yer"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="337"/>
+        </scene>
+    </scenes>
+</document>
