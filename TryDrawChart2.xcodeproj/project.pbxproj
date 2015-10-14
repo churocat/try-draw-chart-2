@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4897B79D1BCCEBC60072E73B /* ChartDataRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4897B79C1BCCEBC60072E73B /* ChartDataRenderer.swift */; settings = {ASSET_TAGS = (); }; };
+		4897B79F1BCCED300072E73B /* LineChartDataRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4897B79E1BCCED300072E73B /* LineChartDataRenderer.swift */; settings = {ASSET_TAGS = (); }; };
+		4897B7A71BCCFDED0072E73B /* LineChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4897B7A61BCCFDED0072E73B /* LineChartDataSet.swift */; settings = {ASSET_TAGS = (); }; };
 		48BD202B1BC660F100309FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD202A1BC660F100309FA0 /* AppDelegate.swift */; };
 		48BD202D1BC660F100309FA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD202C1BC660F100309FA0 /* ViewController.swift */; };
 		48BD20301BC660F100309FA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48BD202E1BC660F100309FA0 /* Main.storyboard */; };
@@ -23,9 +26,13 @@
 		48BD20521BC675C300309FA0 /* ChartViewPortHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD20511BC675C300309FA0 /* ChartViewPortHandler.swift */; settings = {ASSET_TAGS = (); }; };
 		48BD20541BC675CE00309FA0 /* ChartSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD20531BC675CE00309FA0 /* ChartSettings.swift */; settings = {ASSET_TAGS = (); }; };
 		48BD20561BC675E100309FA0 /* ChartUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD20551BC675E100309FA0 /* ChartUtils.swift */; settings = {ASSET_TAGS = (); }; };
+		48DB5E8A1BCE40A7003BCFE6 /* ChartTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB5E891BCE40A7003BCFE6 /* ChartTransformer.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4897B79C1BCCEBC60072E73B /* ChartDataRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDataRenderer.swift; sourceTree = "<group>"; };
+		4897B79E1BCCED300072E73B /* LineChartDataRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartDataRenderer.swift; sourceTree = "<group>"; };
+		4897B7A61BCCFDED0072E73B /* LineChartDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartDataSet.swift; sourceTree = "<group>"; };
 		48BD20271BC660F100309FA0 /* TryDrawChart2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TryDrawChart2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48BD202A1BC660F100309FA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48BD202C1BC660F100309FA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +51,7 @@
 		48BD20511BC675C300309FA0 /* ChartViewPortHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewPortHandler.swift; sourceTree = "<group>"; };
 		48BD20531BC675CE00309FA0 /* ChartSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSettings.swift; sourceTree = "<group>"; };
 		48BD20551BC675E100309FA0 /* ChartUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartUtils.swift; sourceTree = "<group>"; };
+		48DB5E891BCE40A7003BCFE6 /* ChartTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,7 @@
 				48BD20421BC662C800309FA0 /* ChartData.swift */,
 				48BD20431BC662C800309FA0 /* ChartDataEntry.swift */,
 				48BD20441BC662C800309FA0 /* ChartDataSet.swift */,
+				4897B7A61BCCFDED0072E73B /* LineChartDataSet.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -123,8 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				48BD204E1BC675A400309FA0 /* ChartAxisRenderer.swift */,
-				48BD20551BC675E100309FA0 /* ChartUtils.swift */,
-				48BD20531BC675CE00309FA0 /* ChartSettings.swift */,
+				4897B79C1BCCEBC60072E73B /* ChartDataRenderer.swift */,
+				4897B79E1BCCED300072E73B /* LineChartDataRenderer.swift */,
 			);
 			name = Renderers;
 			sourceTree = "<group>";
@@ -133,6 +142,9 @@
 			isa = PBXGroup;
 			children = (
 				48BD20511BC675C300309FA0 /* ChartViewPortHandler.swift */,
+				48BD20551BC675E100309FA0 /* ChartUtils.swift */,
+				48BD20531BC675CE00309FA0 /* ChartSettings.swift */,
+				48DB5E891BCE40A7003BCFE6 /* ChartTransformer.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -208,14 +220,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				48BD204F1BC675A400309FA0 /* ChartAxisRenderer.swift in Sources */,
+				4897B7A71BCCFDED0072E73B /* LineChartDataSet.swift in Sources */,
 				48BD20541BC675CE00309FA0 /* ChartSettings.swift in Sources */,
 				48BD20521BC675C300309FA0 /* ChartViewPortHandler.swift in Sources */,
 				48BD202D1BC660F100309FA0 /* ViewController.swift in Sources */,
 				48BD20451BC662C800309FA0 /* ChartData.swift in Sources */,
 				48BD202B1BC660F100309FA0 /* AppDelegate.swift in Sources */,
 				48BD20471BC662C800309FA0 /* ChartDataSet.swift in Sources */,
+				48DB5E8A1BCE40A7003BCFE6 /* ChartTransformer.swift in Sources */,
+				4897B79F1BCCED300072E73B /* LineChartDataRenderer.swift in Sources */,
 				48BD20561BC675E100309FA0 /* ChartUtils.swift in Sources */,
 				48BD20491BC6631000309FA0 /* NotImportant.swift in Sources */,
+				4897B79D1BCCEBC60072E73B /* ChartDataRenderer.swift in Sources */,
 				48BD20401BC6623C00309FA0 /* ChartViewBase.swift in Sources */,
 				48BD203E1BC6621900309FA0 /* LineChartView.swift in Sources */,
 				48BD204C1BC6758900309FA0 /* ChartAxis.swift in Sources */,
@@ -371,6 +387,7 @@
 				48BD203B1BC660F100309FA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

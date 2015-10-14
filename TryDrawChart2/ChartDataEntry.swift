@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ChartDataEntry {
     
@@ -18,7 +19,10 @@ class ChartDataEntry {
     /// the timestamp of data (x axis)
     var timestamp = Int(0)
 
+    /// the point to draw
+    var pixelPt = CGPoint.zero
 
+    
     // MARK: - Initializers
     
     init(timestamp: Int, value: Double) {

@@ -14,8 +14,12 @@ class ChartViewBase: UIView {
     // MARK: - Properties
 
     internal var viewPortHandler: ChartViewPortHandler!
+    internal var chartTransformer: ChartTransformer!
+
     internal var axisRenderer: ChartAxisRenderer!
     internal var axis: ChartAxis!
+    
+    internal var dataRenderer: ChartDataRenderer?
     
     var axisLabelPosition = ChartSettings.Axis.Label.Position {
         didSet {
@@ -32,6 +36,9 @@ class ChartViewBase: UIView {
 
     /// flag that indicates if the chart has been fed with data yet
     internal var dataNotSet = true
+    
+    internal var chartYMin = Double(0)
+    internal var chartYMax = Double(0)
     
     /// The data for the chart
     internal var _data: ChartData!
@@ -68,6 +75,8 @@ class ChartViewBase: UIView {
         viewPortHandler = ChartViewPortHandler()
         viewPortHandler.setChartDimens(width: bounds.size.width, height: bounds.size.height)
         
+        chartTransformer = ChartTransformer(viewPortHandler: viewPortHandler)
+        
         axis = ChartAxis(position: axisLabelPosition)
         
         axisRenderer = ChartAxisRenderer(viewPortHandler: viewPortHandler, axis: axis)
@@ -97,7 +106,8 @@ class ChartViewBase: UIView {
             return
         }
         
-        axisRenderer.renderAxisLabels(context: context)
+        axisRenderer.drawAxisLabels(context: context)
+        dataRenderer?.drawData(context: context)
     }
 
     internal func notifyDataSetChanged() {
@@ -105,6 +115,7 @@ class ChartViewBase: UIView {
             return
         }
         
+        calcMinMax()
         calculateOffsets()
         calcViewWidth()
         
@@ -141,6 +152,15 @@ class ChartViewBase: UIView {
             offsetTop:    max(minOffset, offsetTop),
             offsetRight:  max(minOffset, offsetRight),
             offsetBottom: max(minOffset, offsetBottom))
+        
+        // prepare for transformer
+        chartTransformer.prepareMatrixOffset(axisLabelWidth: axis.labelWidth)
+        chartTransformer.prepareMatrixValuePx(chartYMin: chartYMin, deltaY: CGFloat(chartYMax - chartYMin), axisLabelWidth: axis.labelWidth)
+    }
+    
+    func calcMinMax() {
+        chartYMin = floor((data?.valueMin)!) - 1
+        chartYMax = ceil((data?.valueMax)!) + 1
     }
 
 }

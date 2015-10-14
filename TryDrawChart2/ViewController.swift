@@ -48,7 +48,8 @@ class ViewController: UIViewController {
             (1440576826, 60.1),
             (1440676827, 61.2),
             (1440876830, 62.1),
-            (1440976831, 61.5),
+            (1440976831, 61.8),
+            (1441476831, 61.5),
         ]
         
         let finalDataEntries2 : [(Int, Double)] = [
@@ -74,8 +75,12 @@ class ViewController: UIViewController {
         
         let dataEntries1 = finalDataEntries1.map() { ChartDataEntry(timestamp: $0.0, value: $0.1) }
         let dataEntries2 = finalDataEntries2.map() { ChartDataEntry(timestamp: $0.0, value: $0.1) }
-        let dataSet1 = ChartDataSet(dataEntries: dataEntries1)
-        let dataSet2 = ChartDataSet(dataEntries: dataEntries2)
+        let dataSet1 = LineChartDataSet(dataEntries: dataEntries1)
+        let dataSet2 = LineChartDataSet(dataEntries: dataEntries2)
+        
+        dataSet1.color = UIColor.greenColor()
+        dataSet2.color = UIColor.blueColor()
+        
         let data = ChartData(dataSets: [dataSet1, dataSet2])
         
         

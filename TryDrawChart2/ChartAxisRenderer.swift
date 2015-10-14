@@ -54,7 +54,7 @@ class ChartAxisRenderer {
         axis.entries = dateRange
     }
     
-    func renderAxisLabels(context context: CGContext?) {
+    func drawAxisLabels(context context: CGContext?) {
         var labelX = viewPortHandler.offsetLeft + axis.labelWidth / 2
         var dayLabelPt = CGPoint(x: labelX, y: dayLabelY)
         var dayOfWeekLabelPt = CGPoint(x: labelX, y: dayOfWeekLabelY)
@@ -70,7 +70,7 @@ class ChartAxisRenderer {
         }
     }
     
-    func strokeVerticalLine(context context: CGContext?, x: CGFloat) {
+    internal func strokeVerticalLine(context context: CGContext?, x: CGFloat) {
         let frontLineX = x - axis.labelWidth/2
         let tailLineX  = x + axis.labelWidth/2
         
@@ -91,13 +91,13 @@ class ChartAxisRenderer {
         CGContextRestoreGState(context)
     }
     
-    func drawDayOfWeekLabel(context context: CGContext?, text: String, pt: CGPoint) {
+    internal func drawDayOfWeekLabel(context context: CGContext?, text: String, pt: CGPoint) {
         ChartUtils.drawText(context: context, text: text, point: pt,
             align: .Center,
             attributes: [NSFontAttributeName: axis.dayOfWeekLabelFont, NSForegroundColorAttributeName: axis.dayOfWeekLabelTextColor])
     }
     
-    func drawDayLabel(context context: CGContext?, text: String, pt: CGPoint) {
+    internal func drawDayLabel(context context: CGContext?, text: String, pt: CGPoint) {
         ChartUtils.drawText(context: context, text: text, point: pt,
             align: .Center,
             attributes: [NSFontAttributeName: axis.dayLabelFont, NSForegroundColorAttributeName: axis.dayLabelTextColor])

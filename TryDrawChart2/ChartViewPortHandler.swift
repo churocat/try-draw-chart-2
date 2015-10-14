@@ -11,22 +11,29 @@ import CoreGraphics
 
 class ChartViewPortHandler {
     
-    /// this rectangle defines the area in which graph values can be drawn
-    var contentRect = CGRect()
+    // MARK: - Properties
     
     var chartWidth = CGFloat(0.0)
     var chartHeight = CGFloat(0.0)
+
+    /// this rectangle defines the area in which graph values can be drawn
+    var contentRect = CGRect()
+    
+    var contentWidth: CGFloat { return contentRect.size.width }
+    var contentHeight: CGFloat { return contentRect.size.height }
+    
+    var contentTop: CGFloat { return contentRect.origin.y }
+    var contentLeft: CGFloat { return contentRect.origin.x }
+    var contentRight: CGFloat { return contentRect.origin.x + contentRect.size.width }
+    var contentBottom: CGFloat { return contentRect.origin.y + contentRect.size.height }
     
     var offsetLeft: CGFloat { return contentRect.origin.x }
     var offsetRight: CGFloat { return chartWidth - contentRect.size.width - contentRect.origin.x }
     var offsetTop: CGFloat { return contentRect.origin.y }
     var offsetBottom: CGFloat { return chartHeight - contentRect.size.height - contentRect.origin.y }
     
-    var contentTop: CGFloat { return contentRect.origin.y }
-    var contentLeft: CGFloat { return contentRect.origin.x }
-    var contentRight: CGFloat { return contentRect.origin.x + contentRect.size.width }
-    var contentBottom: CGFloat { return contentRect.origin.y + contentRect.size.height }
-
+    
+    // MARK: - Functions
     
     func setChartDimens(width width: CGFloat, height: CGFloat) {
         let offsetLeft = self.offsetLeft

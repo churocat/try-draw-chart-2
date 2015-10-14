@@ -23,6 +23,12 @@ internal class ChartUtils {
         UIGraphicsPopContext()
     }
     
+    internal class func calcDays(ts1 ts1: Int, ts2: Int) -> Int {
+        let ts1ZeroAM = NSDate(timeIntervalSince1970: NSTimeInterval(ts1)).unixtimeZeroAM
+        let ts2ZeroAM = NSDate(timeIntervalSince1970: NSTimeInterval(ts2)).unixtimeZeroAM
+        return abs(ts1ZeroAM - ts2ZeroAM) / 86400
+    }
+    
 }
 
 

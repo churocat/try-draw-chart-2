@@ -40,4 +40,9 @@ struct ChartSettings {
         static let StrokeLineOffset: CGFloat = 10
     }
 
+    struct LineData {
+        static let Color = UIColor.blackColor()
+        static let CircleRadius = CGFloat(5.0)
+        static let LineWidth = CGFloat(2.0)
+    }
 }

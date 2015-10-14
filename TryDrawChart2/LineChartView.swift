@@ -9,15 +9,30 @@
 import Foundation
 import UIKit
 
-class LineChartView: ChartViewBase {
+class LineChartView: ChartViewBase, LineChartDataRendererDelegate {
     
     // MARK: - Initializers
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        dataRenderer = LineChartDataRenderer(delegate: self, viewPortHandler: viewPortHandler)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        dataRenderer = LineChartDataRenderer(delegate: self, viewPortHandler: viewPortHandler)
     }
+    
+    // MARK: - LineChartDataRendererDelegate
+    
+    func lineChartDataRendererGetData(renderer: LineChartDataRenderer) -> ChartData! {
+        return _data
+    }
+    
+    func lineChartDataRendererGetTransformer(renderer: LineChartDataRenderer) -> ChartTransformer! {
+        return chartTransformer
+    }
+    
 }

@@ -12,7 +12,15 @@ class ChartDataSet {
     
     // MARK: - Properties
     
-    var dataEntries: [ChartDataEntry]!
+    private var _dataEntries: [ChartDataEntry] = []
+    var dataEntries: [ChartDataEntry] {
+        get {
+            return _dataEntries
+        }
+        set {
+            _dataEntries = newValue.sort() { return $0.timestamp > $1.timestamp }
+        }
+    }
     
     var valueMin: Double = 0
     var valueMax: Double = 0
