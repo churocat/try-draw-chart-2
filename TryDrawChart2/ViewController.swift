@@ -78,8 +78,8 @@ class ViewController: UIViewController {
         let dataSet1 = LineChartDataSet(dataEntries: dataEntries1)
         let dataSet2 = LineChartDataSet(dataEntries: dataEntries2)
         
-        dataSet1.color = UIColor.greenColor()
-        dataSet2.color = UIColor.blueColor()
+        dataSet1.color = UIColor(red: 254/255, green: 107/255, blue: 137/255, alpha: 1)
+        dataSet2.color = UIColor(red: 239/255, green: 192/255, blue: 37/255, alpha: 1)
         
         let data = ChartData(dataSets: [dataSet1, dataSet2])
         

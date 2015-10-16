@@ -13,9 +13,12 @@ class LineChartDataSet: ChartDataSet {
 
     var color = ChartSettings.LineData.Color
     var circleRadius = ChartSettings.LineData.CircleRadius
+
+    var showText = ChartSettings.LineData.ShowText
+    var textColor = ChartSettings.LineData.TextColor
+    var textFont = ChartSettings.LineData.TextFont
     
     /// line width of the chart (min = 0.2, max = 10)
-    /// **default**: 1
     private var _lineWidth = ChartSettings.LineData.LineWidth
     var lineWidth: CGFloat {
         get {

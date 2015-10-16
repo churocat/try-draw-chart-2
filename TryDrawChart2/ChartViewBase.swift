@@ -90,8 +90,6 @@ class ChartViewBase: UIView {
         
         if dataNotSet || _data === nil { // check if there is data
             
-            CGContextSaveGState(context)
-            
             // if no data, inform the user
             let noDataText = "No chart data available."
             let infoFont: UIFont! = UIFont(name: "HelveticaNeue", size: 12.0)

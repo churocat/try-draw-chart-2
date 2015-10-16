@@ -43,6 +43,7 @@ class LineChartDataRenderer: ChartDataRenderer {
         CGContextSetLineWidth(context, dataSet.lineWidth)
         drawLinear(context: context, dataSet: dataSet)
         drawCircles(context: context, dataSet: dataSet)
+        drawTexts(context: context, dataSet: dataSet)
         CGContextRestoreGState(context)
     }
     
@@ -91,6 +92,19 @@ class LineChartDataRenderer: ChartDataRenderer {
         }
         
         CGContextRestoreGState(context)
+    }
+
+    internal func drawTexts(context context: CGContext?, dataSet: LineChartDataSet) {
+        let textFont  = dataSet.textFont
+        let textColor = dataSet.textColor
+        
+        for dataEntry in dataSet.dataEntries {
+            ChartUtils.drawText(context: context, text: dataEntry.value.description,
+                point: CGPoint(x: dataEntry.pixelPt.x, y: dataEntry.pixelPt.y - textFont.lineHeight/2),
+                align: .Center,
+                attributes: [NSFontAttributeName: textFont, NSForegroundColorAttributeName: textColor]
+            )
+        }
     }
 
 }

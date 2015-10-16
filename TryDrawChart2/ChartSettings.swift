@@ -42,7 +42,10 @@ struct ChartSettings {
 
     struct LineData {
         static let Color = UIColor.blackColor()
-        static let CircleRadius = CGFloat(5.0)
+        static let CircleRadius = CGFloat(15.0)
         static let LineWidth = CGFloat(2.0)
+        static let TextColor = UIColor.whiteColor()
+        static let TextFont = UIFont.systemFontOfSize(10.0)
+        static let ShowText = true
     }
 }
